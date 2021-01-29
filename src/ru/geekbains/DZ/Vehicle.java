@@ -6,7 +6,7 @@ public abstract class Vehicle {
     private float consumption;
 
 
-    public String getName() {
-        return name;
-    }
+//    public String getName() {
+//        return name;
+//    }
 }

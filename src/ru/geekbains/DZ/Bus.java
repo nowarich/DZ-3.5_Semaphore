@@ -1,17 +1,31 @@
 package ru.geekbains.DZ;
 
-public class Bus extends Vehicle {
+public class Bus extends Vehicle implements Runnable{
     private String name;
-    private int capacity;
-    private float consumption;
+    private static int capacity = 40;
+    private static float consumption =7.5f;
+    public static FuelStation fuelStation;
 
-    public Bus() {
-        this(40, 7.5f);
+
+    public Bus(String name, FuelStation fuelStation) {
+        this.name = "Bus" + name;
+        this.fuelStation = fuelStation;
     }
 
-    public Bus(int capacity, float consumption) {
-        this.name = name;
-        this.capacity = capacity;
-        this.consumption = consumption;
+    @Override
+    public void run() {
+        try {
+            while (true) {
+                float fuelLeft = capacity;
+                while(fuelLeft >= consumption*3) {
+                    Thread.sleep(3000);
+                    fuelLeft = fuelLeft - consumption*3;
+                    System.out.println(String.format("%s has %s fuel left", name, fuelLeft));
+                }
+                fuelStation.enter(name);
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
