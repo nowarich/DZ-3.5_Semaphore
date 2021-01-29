@@ -6,10 +6,10 @@ public class Car extends Vehicle implements Runnable {
     private static float consumption = 2.5f;
     public static FuelStation fuelStation;
 
-    @Override
-    public String getName() {
-        return name;
-    }
+//    @Override
+//    public String getName() {
+//        return name;
+//    }
 
     public Car(String name, FuelStation fuelStation) {
         this.name = "Car " + name;
