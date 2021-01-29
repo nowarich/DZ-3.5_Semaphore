@@ -12,7 +12,7 @@ public class Main {
     }
 
     static void doFuelStationDemo() {
-        FuelStation fuelStation = new FuelStation(3);
+        FuelStation fuelStation = new FuelStation();
 
         ExecutorService executorService = Executors.newFixedThreadPool(10);
 //        executorService.execute(fuelStation::enter);

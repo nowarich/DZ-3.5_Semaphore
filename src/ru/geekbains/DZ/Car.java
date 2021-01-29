@@ -26,7 +26,7 @@ public class Car extends Vehicle implements Runnable {
                     fuelLeft = fuelLeft - consumption*3;
                     System.out.println(String.format("%s has %s fuel left", name, fuelLeft));
                 }
-                fuelStation.enter();
+                fuelStation.enter(name);
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
